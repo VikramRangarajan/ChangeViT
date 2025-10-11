@@ -1,11 +1,10 @@
 ## ChangeViT
-Codes and models for ***[ChangeViT: Unleashing Plain Vision Transformers for Change Detection ](https://arxiv.org/pdf/2406.12847).***
+Codes and models for ***[ChangeViT: Unleashing Plain Vision Transformers for Change Detection in Remote Sensing Images](https://doi.org/10.1016/j.patcog.2025.112539).***
 
-[Duowang Zhu](https://scholar.google.com/citations?user=9qk9xhoAAAAJ&hl=en&oi=ao), [Xiaohu Huang](https://scholar.google.com/citations?user=sBjFwuQAAAAJ&hl=en&oi=ao), Haiyan Huang, Zhenfeng Shao, Qimin Cheng
-
-[[paper]](https://arxiv.org/pdf/2406.12847)
+[Zhu, Duowang](https://scholar.google.com/citations?user=9qk9xhoAAAAJ&hl=en&oi=ao), and [Huang, Xiaohu](https://scholar.google.com/citations?user=sBjFwuQAAAAJ&hl=en&oi=ao), and Huang, Haiyan and Cheng, Qimin and Huang, Zheng and Shao, Zhenfeng
 
 ## Update
+- [2025/10/3] ChangeViT has been accepted by **Pattern Recognition**.
 - [2024/6/24] All the code has been released, including training and inference. 😊
 - [2024/6/19] The core component of this paper has been released, including [detail-capture](model/encoder.py), and [feature injector](model/decoder.py).
 - [2024/6/18] The training code will be publicly available at about ~~2024/7/5~~.
