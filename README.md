@@ -345,10 +345,12 @@ This repository is built upon [DINOv2](https://github.com/facebookresearch/dinov
 
 ## Citation
 ```bibtex
-@article{zhu2024changevit,
-  title={ChangeViT: Unleashing Plain Vision Transformers for Change Detection},
-  author={Zhu, Duowang and Huang, Xiaohu and Huang, Haiyan and Shao, Zhenfeng and Cheng, Qimin},
-  journal={arXiv preprint arXiv:2406.12847},
-  year={2024}
+@article{zhu2025changevit,
+  title={ChangeViT: Unleashing Plain Vision Transformers for Change Detection in Remote Sensing Images},
+  author={Zhu, Duowang and Huang, Xiaohu and Huang, Haiyan and Cheng, Qimin and Huang, Zheng and Shao, Zhenfeng},
+  journal={Pattern Recognition},
+  pages={112539},
+  year={2025},
+  publisher={Elsevier}
 }
 ```
