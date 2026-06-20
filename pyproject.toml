@@ -1,0 +1,35 @@
+[project]
+name = "changevit"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "einops>=0.8.2",
+    "numpy>=2.4.6",
+    "opencv-python>=4.13.0.92",
+    "pillow>=12.2.0",
+    "torch==2.9.1",
+    "torchvision",
+    "xformers",
+    "torchgeo",
+    "torchcam",
+    "torchmetrics",
+]
+
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu129" },
+]
+torchvision = [
+    { index = "pytorch-cu129" },
+]
+xformers = [
+    { index = "pytorch-cu129" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true
