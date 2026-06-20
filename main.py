@@ -158,7 +158,7 @@ def trainValidateSegmentation(args):
         os.makedirs(args.savedir)
 
 
-    model = Trainer(args.model_type).float()
+    model = Trainer(args.model_type, args.pretrained).float()
     if args.onGPU:
         model = model.cuda()
 
@@ -309,6 +309,7 @@ if __name__ == '__main__':
     parser.add_argument('--onGPU', default=True, type=lambda x: (str(x).lower() == 'true'),
                         help='Run on CPU or GPU. If TRUE, then GPU.')
     parser.add_argument('--gpu_id', default=0, type=int, help='GPU id number')
+    parser.add_argument("--no-pretrained", action="store_false", dest="pretrained", help='Use no pretrained backbone')
 
     args = parser.parse_args()
     print('Called with args:')

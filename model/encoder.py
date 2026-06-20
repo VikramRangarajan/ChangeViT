@@ -314,7 +314,7 @@ def init_weights_vit_timm(module: nn.Module, name: str = ""):
 
 
 class Encoder(nn.Module):
-    def __init__(self, model_type='small'):
+    def __init__(self, model_type='small', pretrained=True):
         super().__init__()
         if model_type == 'tiny':
             self.vit = DinoVisionTransformer(
@@ -345,14 +345,15 @@ class Encoder(nn.Module):
         else:
             assert False, r'Encoder: check the vit model type'
 
-        state_dict = torch.load(path, map_location='cpu')['model'] \
-            if model_type == 'tiny' else torch.load(path, map_location='cpu')
+        if pretrained:
+            state_dict = torch.load(path, map_location='cpu')['model'] \
+                if model_type == 'tiny' else torch.load(path, map_location='cpu')
 
-        for k in ['pos_embed', 'patch_embed.proj.weight']:
-            del state_dict[k]
-        msg = self.vit.load_state_dict(state_dict, strict=False)
-        print(' missing_keys:{},\n unexpected_keys:{}'.format(msg.missing_keys, msg.unexpected_keys))
-        print('model_type: {},\n checkpoint_path: {}'.format(model_type, path))
+            for k in ['pos_embed', 'patch_embed.proj.weight']:
+                del state_dict[k]
+            msg = self.vit.load_state_dict(state_dict, strict=False)
+            print(' missing_keys:{},\n unexpected_keys:{}'.format(msg.missing_keys, msg.unexpected_keys))
+            print('model_type: {},\n checkpoint_path: {}'.format(model_type, path))
 
         self.resnet = resnet18(pretrained=True)
         self.drop = nn.Dropout(p=0.01)

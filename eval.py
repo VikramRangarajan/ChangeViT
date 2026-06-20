@@ -81,7 +81,7 @@ def ValidateSegmentation(args):
     os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu_id)
     torch.backends.cudnn.benchmark = True
 
-    model = Trainer(args.model_type).float()
+    model = Trainer(args.model_type, True).float()
 
     args.savedir = args.savedir + '_' + args.file_root + '_iter_' + str(args.max_steps) + '_lr_' + str(args.lr) + '/'
 

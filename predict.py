@@ -45,7 +45,7 @@ def stitch_patches(patches, rows=4, cols=4):
 def main(args):
     os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu_id) if args.onGPU else ''
 
-    model = Trainer(args.model_type).float()
+    model = Trainer(args.model_type, False).float()
     if args.onGPU:
         model = model.cuda()
     model.eval()
