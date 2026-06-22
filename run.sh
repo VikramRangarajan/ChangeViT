@@ -45,7 +45,7 @@ trap 'term_handler' SIGTERM
 . ~/.bashrc
 module purge
 
-uv run main.py --file_root LEVIR --max_steps 80000 --model_type small --batch_size 16 --lr 2e-4 --gpu_id 0 --resume True &
+uv run main.py --file_root LEVIR --max_steps 80000 --model_type tiny --batch_size 16 --lr 2e-4 --gpu_id 0 --no-pretrained --resume True &
 
 # If we reach timeout before run ends, wait returns immediately, goes into trap
 

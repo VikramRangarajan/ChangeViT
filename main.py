@@ -213,7 +213,7 @@ def trainValidateSegmentation(args):
         args.resume = args.savedir + 'checkpoint.pth.tar'
         if os.path.isfile(args.resume):
             print("=> loading checkpoint '{}'".format(args.resume))
-            checkpoint = torch.load(args.resume)
+            checkpoint = torch.load(args.resume, weights_only=False)
             start_epoch = checkpoint['epoch']
             cur_iter = start_epoch * len(trainLoader)
             # args.lr = checkpoint['lr']
@@ -275,7 +275,7 @@ def trainValidateSegmentation(args):
               % (epoch, lossTr, lossVal, score_tr['F1'], score_val['F1']))
         torch.cuda.empty_cache()
 
-    state_dict = torch.load(model_file_name)
+    state_dict = torch.load(model_file_name, weights_only=False)
     model.load_state_dict(state_dict)
 
     loss_test, score_test = val(args, testLoader, model)
